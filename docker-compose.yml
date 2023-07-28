@@ -54,6 +54,8 @@ services:
       - 10022:22
     environment:
       - JENKINS_AGENT_SSH_PUBKEY=${JENKINS_AGENT_SSH_PUBLIC_KEY}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   
   nexus:
     image: sonatype/nexus3
@@ -63,6 +65,7 @@ services:
       - "nexus-data:/sonatype-work"
     ports:
       - "8081:8081"
+
 
 volumes:
   postgresql_data:

@@ -1,5 +1,3 @@
-
-
 FROM jenkins/ssh-agent
 
 # USER root
